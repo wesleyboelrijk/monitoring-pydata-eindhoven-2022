@@ -2,7 +2,6 @@ from setuptools import setup, find_packages
 
 
 base_requirements = [
-    "aiohttp>=3.8.1",
     "fastapi>=0.78.0",
     "joblib>=1.1.0",
     "loguru>=0.6.0",
@@ -18,7 +17,6 @@ base_requirements = [
 
 dev_requirements = [
     "flake8>=4.0.1",
-    "pytest>=7.1.2",
 ]
 
 setup(
@@ -26,6 +24,7 @@ setup(
     version="0.0.1",
     description="Repo for ML monitoring training with prometheus",
     author="Wesley Boelrijk",
+    python_requires=">3.9",
     packages=find_packages("src"),
     package_dir={"": "src"},
     install_requires=base_requirements,
