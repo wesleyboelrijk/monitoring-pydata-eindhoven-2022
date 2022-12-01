@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+  api:
+    build: .
+    volumes:
+     - ./src:/app
+     - ./models:/app/models
+    ports:
+      - "5000:5000"
+
+  prometheus:
+    image: prom/prometheus:v2.35.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - ./prometheus-data:/prometheus
+    command: --web.enable-lifecycle --config.file=/etc/prometheus/prometheus.yaml
+
+  pushgateway_prometheus:
+    image: prom/pushgateway
+    ports:
+      - "9091:9091"
+
+  grafana:
+    image: grafana/grafana:8.5.2
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    volumes:
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./grafana-data:/var/lib/grafana
+
+volumes:
+  prometheus-data:
+
+  grafana-data:
