@@ -42,13 +42,13 @@ After that this should give you 3 running containers Docker containers:
 
 This calls the `/predict/random` endpoint repeatedly with `GET` requests.
 
-`python src/monitoring_with_prometheus/simulate.py`
+`python src/monitoring_with_prometheus/simulate_random.py`
 
 
 ### Simulate "Decision Tree" endpoint
 This calls the `/predict/model` endpoint repeatedly with `POST` requests containing feature values as payload.
 
-`python src/monitoring_with_prometheus/simulate_churn.py`
+`python src/monitoring_with_prometheus/simulate_model.py`
 
 
 ### Questions?
