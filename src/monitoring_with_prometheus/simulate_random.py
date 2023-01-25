@@ -2,7 +2,7 @@ import requests
 from loguru import logger
 
 
-URL = "http://0.0.0.0:5000/predict/random"
+URL = "http://localhost:5000/predict/random"
 
 
 def synchronous():
