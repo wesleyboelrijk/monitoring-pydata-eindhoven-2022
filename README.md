@@ -50,6 +50,9 @@ This calls the `/predict/model` endpoint repeatedly with `POST` requests contain
 
 `python src/monitoring_with_prometheus/simulate_model.py`
 
+### Available model versions on grafana dashboard
+- random
+- DecisionTree_version_1
 
 ### Questions?
 If there are any questions about this repo, feel free to open an issue or send me a personal message.
